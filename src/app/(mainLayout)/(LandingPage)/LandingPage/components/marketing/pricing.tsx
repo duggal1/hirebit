@@ -79,7 +79,7 @@ const Pricing = () => {
         >
             <div className="flex flex-col items-center text-center max-w-xl mx-auto">
                 <SectionBadge title="Recruitment Plans" />
-                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black !leading-snug mt-6 bg-gradient-to-r from-blue-400 via-violet-400 to-blue-500 bg-clip-text text-transparent">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black !leading-snug mt-6  text-gray-950 dark:text-white/90">
                     Choose Your Hiring Power
                 </h2>
                 <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
@@ -197,7 +197,7 @@ const Plan = ({
                 <div className="relative flex flex-col flex-1 align-top w-full p-3 h-full break-words text-left gap-4">
                     <div className="flex items-end gap-2">
                         <div className="flex items-end gap-1 w-40">
-                            <span className="text-2xl md:text-2xl font-black">
+                            <span className="text-2xl md:text-2xl font-semibold text-gray-950 font-heading dark:text-white">
                                 ${displayedPrice === 0 ? 0 : <NumberTicker value={displayedPrice} />}
                             </span>
                             {/* In here 120 * 0.8 = 96 and /12 to get monthly price */}
@@ -213,7 +213,7 @@ const Plan = ({
                                     exit={{ opacity: 0, scale: 0 }}
                                     transition={{ duration: 0.2 }}
                                     aria-hidden="true"
-                                    className="text-xs px-2 py-0.5 rounded mb-1 text-foreground bg-primary font-medium"
+                                    className="text-xs px-2 py-0.5 rounded mb-1 text-white/90 bg-gradient-to-br from-blue-600 to-cyan-500 dark:bg-gradient-to-tr dark:from-violet-600 dark:to-blue-500 font-medium"
                                 >
                                     -20%
                                 </motion.span>
@@ -235,7 +235,7 @@ const Plan = ({
                     <Button
                         asChild
                         variant={id === "pro" ? "default" : "tertiary"}
-                        className="w-full hover:scale-100 hover:translate-y-0 shadow-none"
+                        className="w-full hover:scale-100 hover:translate-y-0  bg-blue-600  dark:bg-blue-700 dark:text-white shadow-noneshadow-none"
                     >
 
                         <Link href={""}>

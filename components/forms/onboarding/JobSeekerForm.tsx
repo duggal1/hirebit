@@ -31,7 +31,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { createJobSeeker, FormState, submitJobSeeker } from "@/src/app/actions";
 import { FileUpload } from "@/components/general/FileUpload";
 
-export default function JobSeekerForm() {
+interface JobSeekerFormProps {
+  onComplete?: () => void;
+}
+
+export default function JobSeekerForm({ onComplete }: JobSeekerFormProps) {
   const router = useRouter();
   const form = useForm<z.infer<typeof jobSeekerSchema>>({
     resolver: zodResolver(jobSeekerSchema),
@@ -130,7 +134,11 @@ export default function JobSeekerForm() {
 
         // Add a small delay before redirect to show the success message
         setTimeout(() => {
-          if (result.redirect) {
+          // Use our onComplete callback to redirect to /main instead of the result.redirect
+          if (onComplete) {
+            onComplete();
+          } else if (result.redirect) {
+            // Fallback to the original redirect if onComplete is not provided
             router.push(result.redirect);
           }
         }, 1500);

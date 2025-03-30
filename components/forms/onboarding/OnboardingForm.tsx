@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import CompanyForm from "./CompanyForm";
 
@@ -13,6 +14,7 @@ import JobSeekerForm from "./JobSeekerForm";
 type UserType = "company" | "jobSeeker" | null;
 
 export default function OnboardingForm() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState<UserType>(null);
 
@@ -21,12 +23,19 @@ export default function OnboardingForm() {
     setStep(2);
   };
 
+  const handleOnboardingComplete = () => {
+    // Redirect to main page after onboarding is completed
+    router.push("/main");
+  };
+
   const renderStep = () => {
     switch (step) {
       case 1:
         return <UserTypeSelection onSelect={handleUserTypeSelect} />;
       case 2:
-        return userType === "company" ? <CompanyForm /> : <JobSeekerForm />;
+        return userType === "company"
+          ? <CompanyForm onComplete={handleOnboardingComplete} />
+          : <JobSeekerForm onComplete={handleOnboardingComplete} />;
       default:
         return null;
     }

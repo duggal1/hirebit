@@ -38,7 +38,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative border-white/10 bg-transparent backdrop-blur-3xl border-t">
+    <footer className="relative border-zinc-300 dark:border-zinc-800 bg-transparent backdrop-blur-3xl border-t">
       <div className="" />
       <div className="relative mx-auto px-6 py-16 container">
         <div className="gap-8 grid grid-cols-2 md:grid-cols-4">
@@ -61,13 +61,13 @@ export function Footer() {
                 </div>
              
               </div>
-              <div className="   text-5xl text-white font-black">
+              <div className="   text-5xl text-black dark:text-white font-black">
             Hire
             <span className="text-blue-500">bit</span>
           </div>
              
             </Link>
-            <p className="mt-4 max-w-md text-sm text-white/60">
+            <p className="mt-4 max-w-md text-sm text-gray-900 dark:text-white">
               The leading job board platform connecting top talent with the best opportunities.
             </p>
           </motion.div>
@@ -80,7 +80,7 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ delay: sectionIndex * 0.1 }}
             >
-              <h3 className="bg-clip-text bg-gradient-to-r from-white via-white to-white/80 font-semibold text-transparent">
+              <h3 className="font-medium text-lg text-gray-950 dark:text-white/90">
                 {section.title}
               </h3>
               <ul className="space-y-2 mt-4">
@@ -94,7 +94,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="relative text-sm text-white/60 hover:text-white transition-colors group"
+                      className="relative text-sm text-zinc-900 dark:text-white/70 hover:text-zinc-400 dark:hover:text-white/60 transition-colors group"
                     >
                       <span className="relative z-10">{link.name}</span>
                       <span className="group-hover:scale-x-100 -bottom-1 absolute inset-x-0 bg-gradient-to-r from-primary/50 to-violet-500/50 h-px transform transition-transform duration-300 scale-x-0" />
@@ -110,10 +110,10 @@ export function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative border-white/10 mt-16 pt-8 border-t"
+          className="relative border-zinc-300 dark:border-zinc-900  mt-16 pt-8 border-t"
         >
           <div className="flex md:flex-row flex-col justify-between items-center gap-6">
-            <p className="text-lg text-white/60 hover:text-white/80 transition-colors">
+            <p className="text-lg text-gray-900 dark:text-white/90 hover:text-white/80 transition-colors">
               © {currentYear} Hirebit. Connecting talent with opportunities.
             </p>
             <div className="flex items-center gap-8 text-xl">
@@ -145,7 +145,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`relative text-white/60 transition-all duration-300 ${social.hoverClass} group`}
+                    className={`relative text-zinc-950 dark:text-white/90 hover:text-white/80 transition-all duration-300 ${social.hoverClass} group`}
                   >
                     <span className="relative z-10">{social.name}</span>
                     <span className="group-hover:scale-x-100 -bottom-1 absolute inset-x-0 bg-gradient-to-r from-primary/50 to-violet-500/50 rounded-full h-[2px] transform transition-transform duration-300 scale-x-0" />

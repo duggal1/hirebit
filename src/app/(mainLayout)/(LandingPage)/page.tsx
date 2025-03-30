@@ -1,4 +1,4 @@
-import { SplashCursor } from "@/components/ui/splash-cursor";
+
 import { Background, Companies, Connect, Container, CTA, Features, Hero, Perks, Pricing, Reviews, Wrapper } from "./LandingPage/components";
 import { Spotlight } from "./LandingPage/components/ui/spotlight";
 
@@ -13,7 +13,7 @@ const HomePage = () => {
                         className="-top-40 left-0 md:left-60 md:-top-20"
                         fill="rgba(0, 122, 255, 0.5)" // Modern blue tone
                     />
-                <SplashCursor />
+             
                    
                     <Hero />
                 </Container>

@@ -22,20 +22,26 @@ export async function Navbar() {
     <nav className="flex justify-between items-center py-5">
       <Link href="/" className="flex items-center gap-2">
         <Image src={Logo} alt="hirebit" width={100} height={80} />
-        <h1 className="text-3xl font-extrabold  text-white">
+        <h1 className="text-3xl font-extrabold text-black  dark:text-white">
                 HIRE<span className="text-blue-500">BIT</span>
               </h1>
             </Link>
     
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex  pr-20 items-center space-x-3">
               <ThemeToggle />
               <Link
-                href="/post-job"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white transition"
+                href="/main"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-black dark:text-white transition"
               >
-                Post Job
+           Dashboard
+              </Link>
+              <Link
+                href="/post-job"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-black dark:text-white transition"
+              >
+          Post Job
               </Link>
               {session?.user ? (
                 <UserDropdown
@@ -46,7 +52,7 @@ export async function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="px-4 py-2 border border-gray-700 hover:border-gray-600 rounded-md text-gray-300 hover:text-white transition"
+                  className="px-4 py-2 border border-gray-300 hover:border-gray-600 rounded-md text-gray-900 dark:text-white hover:text-gray-500 transition"
                 >
                   Login
                 </Link>
@@ -80,7 +86,7 @@ export async function Navbar() {
                       Find New Job
                     </Link>
                     <Link
-                      href="/post-job"
+                      href="/main"
                       className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition"
                     >
                       Post a Job

@@ -4,7 +4,7 @@ import { BlurText } from "../ui/blur-text";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Container from "../global/container";
-import { SplashCursor } from "@/components/ui/splash-cursor";
+
 
 
 const Hero = () => {

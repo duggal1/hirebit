@@ -33,7 +33,11 @@ import {
 import { countryList } from "@/src/utils/countriesList";
 import { UploadDropzone } from "@/components/general/UploadThingReExport";
 
-export default function CompanyForm() {
+interface CompanyFormProps {
+  onComplete?: () => void;
+}
+
+export default function CompanyForm({ onComplete }: CompanyFormProps) {
   const form = useForm<z.infer<typeof companySchema>>({
     resolver: zodResolver(companySchema),
     defaultValues: {
@@ -66,6 +70,13 @@ export default function CompanyForm() {
         industry: values.industry || "Technology", // Provide default value
       });
       toast.success("Company profile created successfully!");
+
+      // Call the onComplete callback if provided
+      if (onComplete) {
+        setTimeout(() => {
+          onComplete();
+        }, 1000); // Small delay to show the success message
+      }
     } catch (error) {
       console.error(error);
       if (error instanceof Error && error.message !== "NEXT_REDIRECT") {

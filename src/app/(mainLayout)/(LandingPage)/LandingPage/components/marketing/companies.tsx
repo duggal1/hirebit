@@ -5,7 +5,7 @@ const Companies = () => {
     return (
         <div className="flex w-full py-20">
             <div className="flex flex-col items-center justify-center text-center w-full py-2">
-                <h2 className="text-5xl heading font-black text-neutral-100">
+                <h2 className="text-5xl heading font-black text-neutral-900 dark:text-white ">
                     Companies that trust us 
                 </h2>
                 <div className="mt-16 w-full relative overflow-hidden">

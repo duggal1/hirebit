@@ -85,7 +85,7 @@ export async function createCompany(data: z.infer<typeof companySchema>) {
     },
   });
 
-  return redirect("/");
+  return redirect("/main");
 }
 
 export async function createJobSeeker(data: z.infer<typeof jobSeekerSchema>) {
@@ -806,7 +806,7 @@ export const submitJobSeeker = async (
     return { 
       message: "Profile updated successfully!",
       success: true,
-      redirect: '/'
+      redirect: '/main'
     };
   } catch (error) {
     console.error('Server error:', error);
